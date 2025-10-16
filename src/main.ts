@@ -1,47 +1,41 @@
+// CSS 导入（必须按此顺序）
 import "./style.css";
 import "@univerjs/design/lib/index.css";
 import "@univerjs/ui/lib/index.css";
+import "@univerjs/docs-ui/lib/index.css";
 import "@univerjs/sheets-ui/lib/index.css";
-import "@univerjs/sheets-formula/lib/index.css";
-import "@univerjs/sheets-numfmt/lib/index.css";
+import "@univerjs/sheets-drawing-ui/lib/index.css";
+import "@univerjs/sheets-formula-ui/lib/index.css";
+import "@univerjs/sheets-numfmt-ui/lib/index.css";
 
-import { LocaleType, LogLevel, Univer } from "@univerjs/core";
-import { defaultTheme } from "@univerjs/design";
-import { UniverDocsPlugin } from "@univerjs/docs";
-import { UniverFormulaEnginePlugin } from "@univerjs/engine-formula";
-import { UniverRenderEnginePlugin } from "@univerjs/engine-render";
-import { UniverSheetsPlugin } from "@univerjs/sheets";
-import { UniverSheetsFormulaPlugin } from "@univerjs/sheets-formula";
-import { UniverSheetsNumfmtPlugin } from "@univerjs/sheets-numfmt";
-import { UniverSheetsUIPlugin } from "@univerjs/sheets-ui";
-import { UniverUIPlugin } from "@univerjs/ui";
+// Facade 导入
+import "@univerjs/ui/facade";
+import "@univerjs/sheets/facade";
+import "@univerjs/sheets-ui/facade";
+
+// 应用导入
+import { initUniver } from "./core/init";
+import { initFeatures } from "./features";
+import CustomVuePanel from "./components/CustomVuePanel.vue";
+import SimpleVueButton from "./components/SimpleVueButton.vue";
+import FloatDomCard from "./components/FloatDomCard.vue";
 import { DEFAULT_WORKBOOK_DATA_DEMO } from "./data";
 
-// univer
-const univer = new Univer({
-  theme: defaultTheme,
-  locale: LocaleType.ZH_CN,
-  logLevel: LogLevel.VERBOSE,
-});
+// 初始化 Univer
+const univerAPI = initUniver(DEFAULT_WORKBOOK_DATA_DEMO);
 
-// core plugins
-univer.registerPlugin(UniverDocsPlugin, {
-  hasScroll: false,
-});
-univer.registerPlugin(UniverRenderEnginePlugin);
-univer.registerPlugin(UniverUIPlugin, {
-  container: "app",
-  header: true,
-  toolbar: true,
-  footer: true,
-});
-univer.registerPlugin(UniverSheetsPlugin);
-univer.registerPlugin(UniverSheetsUIPlugin);
+// 注册 Vue3 组件
+univerAPI.registerComponent('CustomVuePanel', CustomVuePanel, { framework: 'vue3' });
+univerAPI.registerComponent('SimpleVueButton', SimpleVueButton, { framework: 'vue3' });
+univerAPI.registerComponent('FloatDomCard', FloatDomCard, { framework: 'vue3' });
 
-// sheet feature plugins
-univer.registerPlugin(UniverSheetsNumfmtPlugin);
-univer.registerPlugin(UniverFormulaEnginePlugin);
-univer.registerPlugin(UniverSheetsFormulaPlugin);
-
-// create univer sheet instance
-univer.createUniverSheet(DEFAULT_WORKBOOK_DATA_DEMO);
+// 初始化功能（基于生命周期）
+univerAPI.addEvent(
+  univerAPI.Event.LifeCycleChanged,
+  ({ stage }) => {
+    if (stage === univerAPI.Enum.LifecycleStages.Rendered) {
+      // 界面已渲染完成，可以安全初始化功能
+      initFeatures(univerAPI);
+    }
+  }
+);

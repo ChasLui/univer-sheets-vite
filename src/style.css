@@ -1,12 +1,45 @@
-html,
 body {
   margin: 0;
-  padding: 0;
-
-  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
+}
+
+/* 功能按钮样式 */
+.univer-btn {
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.univer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.univer-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.univer-btn-success {
+  background: linear-gradient(135deg, #42b983 0%, #35495e 100%);
+}
+
+.univer-btn-warning {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }

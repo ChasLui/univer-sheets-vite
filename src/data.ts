@@ -2,7 +2,6 @@ import type { IWorkbookData, IDocumentData } from "@univerjs/core";
 import {
   BooleanNumber,
   LocaleType,
-  SheetTypes,
   ColumnSeparatorType,
   PresetListType,
   SectionType,
@@ -83,15 +82,15 @@ export const PAGE5_RICHTEXT_1: IDocumentData = {
       {
         startIndex: 253,
         paragraphStyle: {
-          spaceAbove: 20,
-          indentFirstLine: 20,
+          spaceAbove: { v: 20 },
+          indentFirstLine: { v: 20 },
         },
       },
       {
         startIndex: 404,
         paragraphStyle: {
-          spaceAbove: 20,
-          indentFirstLine: 20,
+          spaceAbove: { v: 20 },
+          indentFirstLine: { v: 20 },
         },
       },
       {
@@ -184,7 +183,7 @@ const richTextDemo: IDocumentData = {
       {
         startIndex: 489,
         paragraphStyle: {
-          spaceAbove: 10,
+          spaceAbove: { v: 10 },
           lineSpacing: 1.2,
         },
       },
@@ -13956,7 +13955,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
   appVersion: "3.0.0-alpha",
   sheets: {
     "sheet-0011": {
-      type: 0,
       name: "工作表11",
       id: "sheet-0011",
       tabColor: "",
@@ -13983,11 +13981,8 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
       defaultColumnWidth: 73,
       defaultRowHeight: 19,
       mergeData: [],
-      hideRow: [],
-      hideColumn: [],
       rowData: {},
       columnData: {},
-      status: 1,
       showGridlines: 1,
       rowHeader: {
         width: 46,
@@ -13997,14 +13992,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0010": {
       name: "sheet-0010",
       id: "sheet-0010",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 40,
@@ -14106,8 +14098,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 2,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -15382,15 +15372,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0009": {
       name: "sheet-0009",
-      status: 0,
       id: "sheet-0009",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 30,
@@ -15426,8 +15412,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 1,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -16611,15 +16595,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0008": {
       name: "sheet-0008",
-      status: 0,
       id: "sheet-0008",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 34,
@@ -16823,8 +16803,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 6,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -18247,15 +18225,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0007": {
       name: "sheet-0007",
-      status: 0,
       id: "sheet-0007",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 14,
@@ -18351,8 +18325,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 5,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -18827,15 +18799,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0006": {
       name: "sheet-0006",
-      status: 0,
       id: "sheet-0006",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 15,
@@ -18883,8 +18851,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 7,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -19481,15 +19447,11 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0005": {
       name: "sheet-0005",
-      status: 0,
       id: "sheet-0005",
-      type: 0,
       tabColor: "",
       hidden: 0,
       rowCount: 1000,
@@ -19591,8 +19553,6 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           endColumn: 0,
         },
       ],
-      hideRow: [],
-      hideColumn: [],
       cellData: {
         "0": {
           "0": {
@@ -21061,12 +21021,9 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: 0,
       },
-      selections: ["A1"],
       rightToLeft: 0,
-      pluginMeta: {},
     },
     "sheet-0004": {
-      type: SheetTypes.GRID,
       id: "sheet-0004",
       name: "sheet0004",
       cellData: {
@@ -21410,10 +21367,7 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           w: 40,
         },
       },
-      status: 0,
       showGridlines: 0,
-      hideRow: [],
-      hideColumn: [],
       rowHeader: {
         width: 46,
         hidden: BooleanNumber.FALSE,
@@ -21422,12 +21376,9 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: BooleanNumber.FALSE,
       },
-      selections: ["A2"],
       rightToLeft: BooleanNumber.FALSE,
-      pluginMeta: {},
     },
     "sheet-0003": {
-      type: SheetTypes.GRID,
       id: "sheet-0003",
       name: "sheet0003",
       cellData: {
@@ -22014,10 +21965,7 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           w: 200,
         },
       },
-      status: 0,
       showGridlines: 0,
-      hideRow: [],
-      hideColumn: [],
       rowHeader: {
         width: 46,
         hidden: BooleanNumber.FALSE,
@@ -22026,12 +21974,9 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: BooleanNumber.FALSE,
       },
-      selections: ["A2"],
       rightToLeft: BooleanNumber.FALSE,
-      pluginMeta: {},
     },
     "sheet-0002": {
-      type: SheetTypes.GRID,
       id: "sheet-0002",
       name: "sheet0002",
       cellData: {
@@ -22942,10 +22887,7 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           w: 50,
         },
       },
-      status: 0,
       showGridlines: 0,
-      hideRow: [],
-      hideColumn: [],
       rowHeader: {
         width: 46,
         hidden: BooleanNumber.FALSE,
@@ -22954,12 +22896,9 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: BooleanNumber.FALSE,
       },
-      selections: ["A2"],
       rightToLeft: BooleanNumber.FALSE,
-      pluginMeta: {},
     },
     "sheet-0001": {
-      type: SheetTypes.GRID,
       id: "sheet-0001",
       cellData: {
         "0": {
@@ -23340,10 +23279,7 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
           w: 60,
         },
       },
-      status: 0,
       showGridlines: 1,
-      hideRow: [],
-      hideColumn: [],
       rowHeader: {
         width: 46,
         hidden: BooleanNumber.FALSE,
@@ -23352,9 +23288,7 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
         height: 20,
         hidden: BooleanNumber.FALSE,
       },
-      selections: ["A2"],
       rightToLeft: BooleanNumber.FALSE,
-      pluginMeta: {},
     },
     // 'sheet-0011': {
     //     type: SheetTypes.GRID,
