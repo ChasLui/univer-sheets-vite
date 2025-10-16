@@ -1,4 +1,22 @@
 {
-  "name": "Devcontainer",
-  "image": "ghcr.io/codesandbox/devcontainers/typescript-node:latest"
+  "name": "Univer Sheets Vite Devcontainer",
+  "image": "ghcr.io/codesandbox/devcontainers/typescript-node:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22.20.0"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "pnpm install",
+  "remoteUser": "node"
 }
