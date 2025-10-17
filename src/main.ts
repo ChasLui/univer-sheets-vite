@@ -14,7 +14,7 @@ import "@univerjs/sheets/facade";
 import "@univerjs/sheets-ui/facade";
 
 // 应用导入
-import { initUniver } from "./core/init";
+import { initUniver } from "./init";
 import { initFeatures } from "./features";
 import CustomVuePanel from "./components/CustomVuePanel.vue";
 import SimpleVueButton from "./components/SimpleVueButton.vue";

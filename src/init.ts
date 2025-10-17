@@ -1,6 +1,7 @@
-import { Univer, UniverInstanceType } from "@univerjs/core";
+import { Univer, UniverInstanceType, LocaleType, LogLevel } from "@univerjs/core";
 import { FUniver } from "@univerjs/core/facade";
 import type { IWorkbookData } from "@univerjs/core";
+import { defaultTheme } from "@univerjs/design";
 import { UniverDocsPlugin } from "@univerjs/docs";
 import { UniverDocsUIPlugin } from "@univerjs/docs-ui";
 import { UniverFormulaEnginePlugin } from "@univerjs/engine-formula";
@@ -13,20 +14,25 @@ import { UniverSheetsDrawingPlugin } from "@univerjs/sheets-drawing";
 import { UniverSheetsDrawingUIPlugin } from "@univerjs/sheets-drawing-ui";
 import { UniverUIPlugin } from "@univerjs/ui";
 import { UniverVue3AdapterPlugin } from "@univerjs/ui-adapter-vue3";
-import { ExportJsonPlugin } from "../plugins/export-json";
-import { univerConfig, uiPluginConfig } from "../config/univer-config";
+import { ExportJsonPlugin } from "./plugins/export-json";
+import { locales } from "./locales";
 
 /**
  * 初始化 Univer 实例
  */
 export function initUniver(workbookData: IWorkbookData): FUniver {
   // 创建 Univer 实例
-  const univer = new Univer(univerConfig);
+  const univer = new Univer({
+    theme: defaultTheme,
+    locale: LocaleType.ZH_CN,
+    locales: locales as any,
+    logLevel: LogLevel.VERBOSE,
+  });
 
   // 注册插件（顺序很重要）
   univer.registerPlugin(UniverRenderEnginePlugin);
   univer.registerPlugin(UniverFormulaEnginePlugin);
-  univer.registerPlugin(UniverUIPlugin, uiPluginConfig);
+  univer.registerPlugin(UniverUIPlugin, { container: "app" });
   univer.registerPlugin(UniverVue3AdapterPlugin);
   univer.registerPlugin(UniverDocsPlugin);
   univer.registerPlugin(UniverDocsUIPlugin);
